@@ -12,9 +12,19 @@
 
 @synthesize window = _window;
 
+//追加、Add
+@synthesize labelData1;
+@synthesize labelData2;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //追加、Add
+    //アプリを起動したときにラベルに表示される文字。必要なければ消してもOK(その場合真っ白で何も表示されない)
+    //The character displayed first.You may erase, as long as it is unnecessary. 
+    labelData1 = @"0";
+    labelData2 = @"No Data";
+    
     return YES;
 }
 							

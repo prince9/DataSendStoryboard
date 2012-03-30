@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISlider *mySlider;
+@property (weak, nonatomic) IBOutlet UITextField *myField;
+
+- (IBAction)KeyHide:(id)sender;
+
+- (IBAction)detaSend:(id)sender;
 
 @end

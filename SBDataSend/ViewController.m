@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+//追加、Add
+#import "AppDelegate.h"
 
 @implementation ViewController
+@synthesize mySlider;
+@synthesize myField;
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,6 +30,8 @@
 
 - (void)viewDidUnload
 {
+    [self setMySlider:nil];
+    [self setMyField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -57,4 +63,18 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)KeyHide:(id)sender {
+    //追加、Add
+    //キーボードをしまう
+    [myField resignFirstResponder];
+}
+
+//ボタンを押すとデータを送る
+- (IBAction)detaSend:(id)sender {
+    //追加、Add
+    //データを送る準備
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.labelData1 = [NSString stringWithFormat:@"%f",mySlider.value];
+    appDelegate.labelData2 = myField.text;
+}
 @end
